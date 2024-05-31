@@ -4,12 +4,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Odin Recipes | HTML Foundations</title>
 </head>
 
 <body>
-  <h1>Odin Recipes</h1>
-  <a href="./recipes/lasagna.html">Lasagna</a>
+  <header>
+    <div class="container">
+      <nav id="navbar" class="navbar">
+        <div class="logo">
+          <a href="#">
+            <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
+          </a>
+        </div>
+        <div class="search-icon">
+          <a href="#">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+      </nav>
+      <div class="hero">
+        <h1>Odin Recipes</h1>
+      </div>
+      <div class="scroll-down">
+        <a href="#top-pick">
+          <p>Scroll Down for Recipes</p>
+          <i class="fas fa-chevron-down arrow-anim"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  <section id="top-pick" class="recipes bg-light">
+    <div class="l-heading">
+      <h1>Top Pick</h1>
+    </div>
+    <article>
+      <div class="flex-container">
+        <div class="row">
+          <div class="column">
+            <div class="column-1">
+              <img src="img/friedrice.jpg" alt="Fried Rice">
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-2 bg-primary">
+              <h2>Fried Rice</h2>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <h2>Fried Rice</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, unde! Natus atque earum eos laboriosam quidem quos, praesentium blanditiis harum qui, ab quas? Ipsa corrupti soluta eligendi incidunt? Ea, nostrum excepturi. Eos natus rem aliquid officia dolorum odio temporibus ullam possimus nisi libero! Voluptatibus est blanditiis corporis enim, eos maxime!</p>
+          <a href="recipes/fried_rice.html" class="btn btn-light">
+            How to Cook
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="flex-container flex-reverse">
+        <div class="row">
+          <div class="column">
+            <div class="column-1">
+              <img src="img/friedrice.jpg" alt="Fried Rice">
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-2 bg-secondary">
+              <h2>Fried Rice</h2>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <h2>Fried Rice</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, unde! Natus atque earum eos laboriosam quidem quos, praesentium blanditiis harum qui, ab quas? Ipsa corrupti soluta eligendi incidunt? Ea, nostrum excepturi. Eos natus rem aliquid officia dolorum odio temporibus ullam possimus nisi libero! Voluptatibus est blanditiis corporis enim, eos maxime!</p>
+          <a href="#" class="btn btn-dark">
+            How to Cook
+          </a>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="flex-container">
+        <div class="row">
+          <div class="column">
+            <div class="column-1">
+              <img src="img/friedrice.jpg" alt="Fried Rice">
+            </div>
+          </div>
+          <div class="column">
+            <div class="column-2 bg-primary">
+              <h2>Fried Rice</h2>
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <h2>Fried Rice</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, unde! Natus atque earum eos laboriosam quidem quos, praesentium blanditiis harum qui, ab quas? Ipsa corrupti soluta eligendi incidunt? Ea, nostrum excepturi. Eos natus rem aliquid officia dolorum odio temporibus ullam possimus nisi libero! Voluptatibus est blanditiis corporis enim, eos maxime!</p>
+          <a href="#" class="btn btn-light">
+            How to Cook
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+  <footer>
+    <div class="main-footer">
+      <div class="social-media">
+        <a href="#">
+          <i class="fab fa-linkedin fa-3x"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-github fa-3x"></i>
+        </a>
+      </div>
+      <p>
+        Odin Recipe, The Odin Project &copy; 2024
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>
