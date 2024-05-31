@@ -1,0 +1,294 @@
+:root {
+  --primary-color: #3E2723;
+  --secondary-color: #FFCC80;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Libre Caslon Text', sans-serif;
+  line-height: 1.4;
+  background: #fff;
+}
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: #333;
+}
+
+.btn {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.btn-light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  opacity: 0.8;
+  transition: .5s all ease-in;
+}
+
+.navbar img {
+  width: 30px;
+}
+
+.navbar .logo {
+  font-weight: 400;
+}
+
+.navbar a {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Header */
+header .container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url('../img/background.jpg') no-repeat center center/cover;
+  color: #fff;
+}
+
+.hero {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.scroll-down {
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+header .container::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+.container * {
+  z-index: 10;
+}
+
+header a,
+header .arrow-anim {
+  color: #fff;
+  text-decoration: none;
+  transition: .5s all ease;
+}
+
+header a:hover {
+  color: #ccc;
+}
+
+header a:hover .arrow-anim {
+  color: #ccc;
+  transform: translateY(10px);
+}
+
+.recipes {
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.l-heading {
+  text-align: center;
+  margin: 3rem 0 2rem;
+}
+
+.l-heading h1 {
+  font-size: 2rem;
+}
+
+/* Flex Container */
+.flex-container {
+  position: relative;
+  margin: .5rem 0;
+  transition: .5s all ease-in;
+  height: 300px;
+}
+
+.flex-container .row {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-container .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.flex-container .column .column-1,
+.flex-container .column .column-2 {
+  height: 100%;
+}
+
+.flex-container .column .column-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.flex-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flex-container.flex-reverse .row {
+  flex-direction: row-reverse;
+}
+
+.flex-container.flex-reverse .row .column-2 {
+  align-items: flex-end;
+}
+
+.flex-container h2 {
+  font-weight: 100;
+}
+
+.flex-container .description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 5rem;
+  height: 100%;
+  color: #fff;
+  z-index: 20;
+  opacity: 0;
+}
+
+.flex-container.flex-reverse .description {
+  color: #333;
+}
+
+.flex-container .description h2 {
+  margin-bottom: 2rem;
+}
+
+.flex-container .description p {
+  margin-bottom: 1rem;
+}
+
+/* Flex Container Anim */
+.flex-container::after {
+  cursor: pointer;
+  content: '';
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary-color);
+  transition: .5s all ease;
+}
+
+.flex-container.flex-reverse::after {
+  left: 0;
+  background: var(--secondary-color);
+}
+
+.flex-container:hover::after {
+  cursor: pointer;
+  width: 100%;
+}
+
+.flex-container .description:hover {
+  animation: description 1s ease-in 0.5s forwards;
+}
+
+/* Footer */
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: #fff;
+}
+
+.main-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-footer a:hover {
+  color: var(--secondary-color);
+}
+
+.main-footer .social-media {
+  display: flex;
+  padding: 2rem 0;
+  width: 200px;
+  justify-content: space-between;
+}
+
+@keyframes description {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
