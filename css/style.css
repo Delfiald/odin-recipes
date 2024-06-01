@@ -49,6 +49,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -69,12 +73,45 @@ a {
 }
 
 .navbar .logo {
+  flex: 1;
   font-weight: 400;
 }
 
 .navbar a {
   display: inline-flex;
   align-items: center;
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu ul a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: .5s border-bottom ease;
+}
+
+.menu ul a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  margin-top: 5px;
+  height: 2px;
+  background: #ccc;
+  transform: scaleX(0);
+  transition: .5s all ease;
+}
+
+.menu ul a:hover::after {
+  transform: scaleX(1);
 }
 
 /* Header */
@@ -96,6 +133,7 @@ header .container {
   justify-content: center;
   align-items: center;
   flex: 1;
+  z-index: 10;
 }
 
 .scroll-down {
@@ -117,8 +155,8 @@ header h1 {
   font-size: 3rem;
 }
 
-.container * {
-  z-index: 10;
+header * {
+  z-index: 20;
 }
 
 header a,
@@ -135,6 +173,58 @@ header a:hover {
 header a:hover .arrow-anim {
   color: #ccc;
   transform: translateY(10px);
+}
+
+/* Search Button */
+
+.search-btn {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.search-box {
+  margin-right: 25px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  transform: scaleY(0);
+  transition: .5s all ease;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  transition: .5s all ease;
+}
+
+.search-toggle {
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 99;
+  opacity: 0;
+}
+
+.search-toggle:hover,
+.search:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.search-toggle:checked ~ .search-icon {
+  transform: translateX(-220px);
+}
+
+.search-toggle:checked ~ .search-box {
+  transform: scaleY(1);
 }
 
 .recipes {
@@ -205,6 +295,11 @@ header a:hover .arrow-anim {
   font-weight: 100;
 }
 
+.flex-container .rating {
+  margin-top: 1rem;
+  font-size: 20px;
+}
+
 .flex-container .description {
   position: absolute;
   top: 0;
@@ -256,12 +351,87 @@ header a:hover .arrow-anim {
   animation: description 1s ease-in 0.5s forwards;
 }
 
+/* Favorite */
+.box-container {
+  display: flex;
+  /* align-items: center; */
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 2rem 1rem;
+}
+
+.box {
+  margin: 0 1rem;
+  flex: 1;
+  display: flex;
+  height: inherit;
+  flex-direction: column;
+  /* justify-content: center; */
+  border: 1px #ccc solid;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 1px 1px 3px #333;
+  transition: .3s all ease;
+}
+
+.box img {
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.box:hover {
+  cursor: pointer;
+  transform: scale(1.005);
+}
+
+.for-more {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px #ccc solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 2rem;
+  box-shadow: 1px 1px 5px #ccc;
+  margin-bottom: 10px;
+  transition: .5s all ease-in;
+}
+
+.for-more h5 {
+  opacity: 0;
+  transition: .5s all ease;
+}
+
+.more-btn:hover {
+  cursor: pointer;
+  transform: translateX(5px);
+}
+
+.more-btn:hover + h5 {
+  opacity: 1;
+}
+
+.for-more a {
+  color: #333;
+}
+
 /* Footer */
 .main-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 200px;
+  height: 180px;
   justify-content: center;
   align-items: center;
   background: #333;
@@ -282,6 +452,11 @@ header a:hover .arrow-anim {
   padding: 2rem 0;
   width: 200px;
   justify-content: space-between;
+}
+
+.rating {
+  font-size: 10px;
+  margin-bottom: 10px;
 }
 
 @keyframes description {
