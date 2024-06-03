@@ -156,7 +156,7 @@ header h1 {
 }
 
 header * {
-  z-index: 20;
+  z-index: 30;
 }
 
 header a,
@@ -191,9 +191,10 @@ header a:hover .arrow-anim {
   border-radius: 5px;
   border: none;
   padding: 10px;
-  transform: scaleY(0);
-  transition: .5s all ease;
   outline: none;
+  visibility: hidden;
+  transform: scaleY(0);
+  transition: .3s all .5s ease;
 }
 
 .search-icon {
@@ -225,7 +226,22 @@ header a:hover .arrow-anim {
 
 .search-toggle:checked ~ .search-box {
   transform: scaleY(1);
+  visibility: visible;
 }
+
+.search-toggle:checked {
+  display: none;
+}
+
+.search-toggle:not(:checked) ~ .search-icon {
+  transition-delay: .3s;
+}
+
+.search-toggle:not(:checked) ~ .search-box {
+  transition-delay: 0s;
+}
+
+/* Recipes Section */
 
 .recipes {
   background: #f4f4f4;

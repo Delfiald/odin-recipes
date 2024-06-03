@@ -26,10 +26,10 @@
             <a href="#"><li>About Us</li></a>
           </ul>
         </nav>
-        <div class="search-btn">
-          <input type="checkbox" class="search-toggle" name="search-toggle" id="search-toggle">
+        <div class="search-btn" id="search-btn">
+          <input type="checkbox" class="search-toggle" name="search-toggle" id="myCheckbox">
           <i class="fas fa-search search-icon"></i>
-          <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe.." autofocus>
+          <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe..">
         </div>
       </nav>
       <div class="hero">
@@ -138,7 +138,7 @@
       </div>
     </article>
   </section>
-  <section>
+  <section id="favorite">
     <div class="l-heading">
       <h2>Favorite</h2>
     </div>
@@ -216,6 +216,19 @@
       </p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('click', function(event) {
+      var checkbox = document.getElementById('myCheckbox');
+      var searchBtnDiv = document.getElementById('search-btn');
+
+      var isClickInside = searchBtnDiv.contains(event.target);
+
+      if (!isClickInside) {
+        checkbox.checked = false;
+      }
+    });
+  </script>
 </body>
 
 </html>
