@@ -577,6 +577,316 @@ header .container.browse {
   margin: 2rem 0;
 }
 
+/* Recipes */
+.recipes-main {
+  max-width: 1100px;
+  height: 100%;
+  margin: 50px auto 5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overview .recipe-info {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.recipe-info .recipe-info-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .8rem;
+  margin: 0 1rem;
+}
+
+.recipe-info .recipe-info-details .author {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.recipe-info .recipe-info-details .author a {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.recipe-info .recipe-info-details .author a:hover {
+  color: #acacac;
+}
+
+.images {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.images .main-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.images .sub-images {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.images .sub-images img {
+  flex: 1;
+  width: calc(33.33% - 10px);
+  max-height: auto;
+}
+
+.details {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  width: 500px;
+  justify-content: center;
+  border: 3px solid #ccc;
+  border-top: 0px;
+  padding: 2rem;
+  position: relative;
+}
+
+.details::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  background: var(--primary-color);
+  width: 100%;
+  border: 3px solid var(--primary-color);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 10px;
+}
+
+.details > div {
+  flex: 1;
+}
+
+.how-to {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.column {
+  flex: 1;
+  flex-basis: 100%;
+}
+
+/* Review */
+.review {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipes-rate {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipes-rate .rate {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: #333;
+}
+
+.recipes-rate .rate .rates {
+  display: flex;
+  position: absolute;
+  left: -32px;
+  z-index: 2;
+}
+
+.recipes-rate .rate .rates.fill {
+  opacity: 0;
+  z-index: 0;
+  transition: .3s all ease;
+}
+
+.recipes-rate .rates.empty:hover {
+  opacity: 0;
+}
+
+.recipes-rate .rates.empty:hover + .rates.fill {
+  opacity: 1;
+  color: #FFCC80;
+}
+
+/* Comment */
+.comments {
+  width: 100%;
+  margin-top: 2rem;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.comment .user-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+.comments img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25%;
+}
+
+.comment .comment-box {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border: 2px solid #ccc;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  padding: 1rem 0;
+}
+
+.comment .comment-box > textarea {
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  resize: none;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: .5s all ease;
+}
+
+.btn:hover{
+  cursor: pointer;
+}
+
+/* Comment Section */
+.comments-section {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.comments-section .comment {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments-section .user-comment-icon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.comments-section .user-comment-icon img {
+  width: 100px;
+}
+
+.user-comment-details {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 1rem;
+}
+
+.user-comment-icon .rating {
+  flex: 1;
+  text-align: right;
+}
+
+.user-comment {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-comment a {
+  color: #333;
+}
+
+.user-comment .reaction {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.user-comment .thumbs-reaction {
+  display: flex;
+}
+
+.user-comment .thumbs-reaction > div {
+  padding: 3px 10px;
+  display: flex;
+  border: 2px solid transparent;
+  align-items: center;
+}
+
+.user-comment .thumbs-reaction > div:hover {
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.user-comment .thumbs-reaction p {
+  margin: 0 10px;
+}
+
+.user-comment .thumbs-reaction .down > i {
+  transform: scaleX(-1);
+}
+
 /* Footer */
 .main-footer {
   display: flex;
