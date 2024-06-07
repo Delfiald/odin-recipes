@@ -5,33 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <title>Odin Recipes | HTML Foundations</title>
 </head>
 
 <body>
   <header>
+    <nav id="navbar" class="navbar">
+      <div class="logo">
+        <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="#favorite">Favorite</a></li>
+          <li><a href="#">Browse All</a></li>
+          <div class="about-btn" id="aboutButton">
+            <li><a href="#">About Us</a></li>
+          </div>
+        </ul>
+      </div>
+      <div class="search-btn" id="search-btn">
+        <input type="checkbox" class="search-toggle" name="search-toggle" id="myCheckbox">
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe..">
+      </div>
+    </nav>
     <div class="container">
-      <nav id="navbar" class="navbar">
-        <div class="logo">
-          <a href="#">
-            <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
-          </a>
-        </div>
-        <nav class="menu">
-          <ul>
-            <a href="#favorite"><li>Favorite</li></a>
-            <a href="#"><li>Browse All</li></a>
-            <a href="#"><li>About Us</li></a>
-          </ul>
-        </nav>
-        <div class="search-btn" id="search-btn">
-          <input type="checkbox" class="search-toggle" name="search-toggle" id="myCheckbox">
-          <i class="fas fa-search search-icon"></i>
-          <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe..">
-        </div>
-      </nav>
       <div class="hero">
         <h1>Odin Recipes</h1>
       </div>
@@ -43,6 +44,35 @@
       </div>
     </div>
   </header>
+
+  <section id="about" class="about">
+    <div>
+      <div>
+        <div class="about-container">
+          <div class="about-nav">
+            <a href="#" id="backAboutButton" class="btn back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+          </div>
+          <div class="about-us">
+            <div class="l-heading">
+              <h1>About Us</h1>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempora vel pariatur laboriosam iusto adipisci ipsum accusamus delectus deleniti nisi? Labore laborum nesciunt quidem ex iste est quam, fugiat incidunt magnam nulla esse sequi illo molestias facilis obcaecati ipsum accusantium, consequatur in reiciendis a reprehenderit earum rerum? Doloremque deserunt id sint ducimus commodi, voluptates aliquam non provident nulla magni velit deleniti vero! Facilis, nemo iste tempora commodi illum placeat consequatur hic architecto eligendi, pariatur minima cumque cupiditate labore tempore reiciendis veniam veritatis eveniet vel suscipit! Aliquid eum ea quibusdam magnam eligendi laborum ex, iure reprehenderit? Itaque nulla magni repellat quos esse consequuntur dignissimos doloribus. Cum labore quas iusto assumenda nam provident blanditiis ullam consectetur ea deserunt hic unde rerum nihil maxime, tempore illo velit voluptatibus accusantium reiciendis numquam deleniti vero dolor. Minus ipsum impedit provident totam ab quo, voluptates magni deleniti est aspernatur reiciendis in earum, culpa commodi! Blanditiis voluptatum velit, culpa alias quam explicabo tenetur est, a, labore aut quae assumenda cumque? Id praesentium alias, quasi cupiditate voluptatum culpa, omnis dolorem recusandae consequuntur hic ipsam blanditiis? Reprehenderit mollitia aspernatur provident suscipit aperiam magnam expedita molestias nemo tenetur. Sunt quos temporibus in suscipit earum ea atque eaque fugiat cum tenetur.</p>
+          </div>
+          <div class="information">
+            <div class="location">
+              <h3>Our Location</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque quae obcaecati ex! At ullam beatae ut dignissimos numquam? Ipsam, quis?</p>
+            </div>
+            <div class="contact">
+              <a href="" class="my-1 btn btn-dark"><i class="fab fa-github fa-3x"></i></a>
+              <a href="" class="btn btn-dark"><i class="fab fa-linkedin fa-3x"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="top-pick" class="recipes bg-light">
     <div class="l-heading">
       <h1>Top Pick</h1>
@@ -138,6 +168,7 @@
       </div>
     </article>
   </section>
+  
   <section id="favorite">
     <div class="l-heading">
       <h2>Favorite</h2>
@@ -216,19 +247,7 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener('click', function(event) {
-      var checkbox = document.getElementById('myCheckbox');
-      var searchBtnDiv = document.getElementById('search-btn');
-
-      var isClickInside = searchBtnDiv.contains(event.target);
-
-      if (!isClickInside) {
-        checkbox.checked = false;
-      }
-    });
-  </script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>
