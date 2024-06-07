@@ -14,11 +14,9 @@
   <header>
     <nav id="navbar" class="navbar">
       <div class="logo">
-        <a href="../index.html">
-          <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
-        </a>
+        <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
       </div>
-      <nav class="menu">
+      <div class="menu">
         <ul>
           <li><a href="#favorite">Favorite</a></li>
           <li><a href="#">Browse All</a></li>
@@ -26,14 +24,17 @@
             <li><a href="#">About Us</a></li>
           </div>
         </ul>
-      </nav>
+      </div>
       <div class="search-btn" id="search-btn">
         <input type="checkbox" class="search-toggle" name="search-toggle" id="myCheckbox">
-        <i class="fas fa-search search-icon"></i>
+        <div class="search-icon">
+          <i class="fas fa-search"></i>
+        </div>
         <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe..">
       </div>
     </nav>
   </header>
+
   <section id="about" class="about">
     <div>
       <div>
@@ -76,7 +77,7 @@
             <i class="fas fa-star"></i>
           </div>
           <div class="author">
-            <a href="">
+            <a href="#">
               <i class="fas fa-user"></i>
               <strong>Lorem ipsum dolor sit amet.</strong>
             </a>
@@ -241,37 +242,7 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('aboutButton').addEventListener('click', function(event) {
-        event.preventDefault();
-        const aboutBox = document.getElementById('about');
-        aboutBox.classList.add('show');
-
-        setTimeout(() => {
-          aboutBox.classList.add('scale');
-        }, 500);
-    });
-
-    document.getElementById('backAboutButton').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('about').classList.remove('show');
-        setTimeout(() => {
-          document.getElementById('about').classList.remove('scale');
-        }, 500);
-    });
-
-    document.addEventListener('click', function(event) {
-        var checkbox = document.getElementById('myCheckbox');
-        var searchBtnDiv = document.getElementById('search-btn');
-
-        if (checkbox && searchBtnDiv) {
-            var isClickInside = searchBtnDiv.contains(event.target);
-            if (!isClickInside) {
-                checkbox.checked = false;
-            }
-        }
-    });
-  </script>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>
