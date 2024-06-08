@@ -53,6 +53,11 @@ ul {
   font-size: 2rem;
 }
 
+.rating {
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
 .btn {
   padding: 20px;
   border-radius: 5px;
@@ -86,6 +91,7 @@ header {
 }
 
 header .container {
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -94,6 +100,7 @@ header .container {
   align-items: center;
   justify-content: center;
   background: url('../img/background.jpg') no-repeat center center/cover;
+  text-align: center;
 }
 
 header .container::before {
@@ -115,6 +122,7 @@ header h1 {
 }
 
 .hero {
+  width: inherit;
   padding-top: 2rem;
   display: flex;
   justify-content: center;
@@ -441,6 +449,10 @@ header a:hover .arrow-anim {
   transition: .3s all ease-in;
 }
 
+.more-btn .down {
+  display: none;
+}
+
 .for-more h5 {
   transform: translateX(5px);
   opacity: 0;
@@ -551,6 +563,10 @@ header .container.browse {
   margin-bottom: 2rem;
 }
 
+.about-us p {
+  font-size: 14px;
+}
+
 .about .information {
   display: flex;
   align-items: center;
@@ -574,7 +590,7 @@ header .container.browse {
   width: 100%;
   max-width: 1100px;
   height: 100%;
-  margin: 50px auto 5rem;
+  margin: 50px auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -583,6 +599,7 @@ header .container.browse {
 }
 
 .overview {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -622,7 +639,7 @@ header .container.browse {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: inherit;
 }
 
 .images .main-image img {
@@ -633,7 +650,6 @@ header .container.browse {
 
 .images .sub-images {
   display: flex;
-  width: 500px;
   justify-content: center;
   gap: 10px;
 }
@@ -648,12 +664,12 @@ header .container.browse {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
-  width: 500px;
   justify-content: center;
   border: 3px solid #ccc;
   border-top: 0px;
   padding: 2rem;
   position: relative;
+  white-space: nowrap;
 }
 
 .details::before {
@@ -681,9 +697,26 @@ header .container.browse {
   border-bottom: 1px solid #ccc;
 }
 
+.ingredients {
+  margin: 1rem;
+}
+
 .column {
   flex: 1;
   flex-basis: 100%;
+}
+
+.how-to ul {
+  list-style-type: disc;
+}
+
+.how-to li {
+  margin-bottom: 1rem;
+}
+
+.how-to h2 {
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 /* Review */
@@ -801,8 +834,8 @@ header .container.browse {
 
 .comments-section .user-comment-icon {
   width: 100%;
+  height: 100%;
   display: flex;
-  align-items: center;
   justify-self: center;
   text-align: center;
 }
@@ -812,12 +845,17 @@ header .container.browse {
 }
 
 .user-comment-details {
-  flex: 2;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.user-comment-information {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  padding: 1rem;
+  text-align: left;
+  margin-bottom: 1rem;
 }
 
 .user-comment-icon .rating {
@@ -877,11 +915,13 @@ header .container.browse {
   align-items: center;
   background: #333;
   color: #fff;
+  text-align: center;
 }
 
 .main-footer a {
   text-decoration: none;
   color: #fff;
+  transition: .5s all ease;
 }
 
 .main-footer a:hover {
@@ -895,16 +935,135 @@ header .container.browse {
   justify-content: space-between;
 }
 
-.rating {
-  font-size: 10px;
-  margin-bottom: 10px;
-}
-
 @keyframes description {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar .logo {
+    justify-content: center;
+  }
+  
+  .navbar .logo span {
+    white-space: nowrap;
+  }
+
+  .navbar .menu {
+    display: none;
+  }
+
+  .navbar .search-btn {
+    display: none;
+  }
+
+  .box-container .box {
+    margin: 10px;
+    flex: 45%;
+  }
+
+  .box-container .for-more .more-btn .right {
+    display: none;
+  }
+
+  .more-btn .down {
+    display: block;
+  }
+
+  .more-btn:hover {
+    transform: translateY(5px);
+  }
+  
+  .for-more h5 {
+    transform: translateY(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .l-heading {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .flex-container .description {
+    padding: 1rem;
+  }
+
+  .recipes-main {
+    margin: 20px auto;
+  }
+
+  .details {
+    padding: 1rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+  }
+
+  .l-heading {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+
+  .flex-container,
+  .flex-container .rating {
+    margin-top: 0;
+    font-size: 12px;
+  }
+
+  .box-container {
+    padding: 10px;
+  }
+
+  .box-container > div {
+    flex-basis: 100%;
+  }
+
+  .browse-recipe {
+    grid-template-columns: 1fr;
+  }
+
+  .browse-recipe {
+    margin: 1rem 10px;
+  }
+
+  .recipe-info-details {
+    flex-direction: column;
+  }
+
+  .how-to {
+    flex-direction: column;
+  }
+
+  .ingredients, .steps {
+    margin: 0;
+  }
+
+  .comment.user {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .comment.user .user-icon {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+
+  .user-comment-icon {
+    white-space: nowrap;
+  }
+
+  .user-comment-details {
+    flex-direction: column;
+    justify-content: center;
   }
 }
