@@ -21,6 +21,7 @@ body {
 a {
   display: inline-block;
   text-decoration: none;
+  color: #333;
 }
 
 ul {
@@ -402,9 +403,13 @@ header a:hover .arrow-anim {
   padding: 0 2rem 1rem;
 }
 
-.box {
-  margin: 0 1rem;
+.box-container > a {
   flex: 1;
+  margin: 0 1rem;
+}
+
+.box {
+  /* flex: 1; */
   display: flex;
   flex-direction: column;
   border: 1px #ccc solid;
@@ -412,6 +417,7 @@ header a:hover .arrow-anim {
   background: #fff;
   box-shadow: 1px 1px 3px #333;
   transition: .3s all ease;
+  height: 100%;
 }
 
 .box img {
@@ -491,6 +497,7 @@ header .container.browse {
 
 .browse-recipe .box {
   margin: 0;
+  height: 100%;
 }
 
 /* About */
@@ -1160,7 +1167,7 @@ header .container.browse {
     display: block;
   }
 
-  .box-container .box {
+  .box-container > a {
     margin: 10px;
     flex: 45%;
   }
@@ -1253,7 +1260,7 @@ header .container.browse {
     padding: 10px;
   }
 
-  .box-container > div {
+  .box-container > a {
     flex-basis: 100%;
   }
 
