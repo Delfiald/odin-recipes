@@ -13,15 +13,13 @@
   <header>
     <nav id="navbar" class="navbar">
       <div class="logo">
-        <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"> <span>The Odin Project</span>
+        <img src="https://www.theodinproject.com/mstile-310x310.png" alt="Odin Icon"><span> The Odin Project</span>
       </div>
       <div class="menu">
         <ul>
-          <li><a href="#favorite">Favorite</a></li>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="#">Browse All</a></li>
-          <div class="about-btn" id="aboutButton">
-            <li><a href="#">About Us</a></li>
-          </div>
+          <li><div class="about-btn" id="aboutButton"><a href="#">About Us</a></div></li>
         </ul>
       </div>
       <div class="search-btn" id="search-btn">
@@ -30,6 +28,28 @@
           <i class="fas fa-search"></i>
         </div>
         <input type="text" class="search-box" id="search-box" name="search-box" placeholder="Search for Recipe..">
+      </div>
+      <div class="menu-wrap">
+        <input type="checkbox" id="hamburger" class="hamburger-btn" name="hamburger">
+        <div class="hamburger">
+          <div>
+            <div></div>
+          </div>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu">
+          <div id="hamburgerSearch">
+            <div><a href="./index.html" class="btn">Home</a></div>
+            <div><a href="browse.html" class="btn">All Recipes</a></div>
+            <div class="about-btn btn" id="aboutButton2"><a href="#">About</a></div>
+            <div class="searchButton">
+              <a href="#" class="btn" id="hamburgerSearchBtn">Search</a>
+              <div>
+                <input type="text" placeholder="Type Recipe Here..">
+                <a href="#" id="hamburgerSearchBack" class="btn">Cancel</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
     <div class="container">
@@ -56,7 +76,7 @@
             <div class="l-heading">
               <h1>About Us</h1>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempora vel pariatur laboriosam iusto adipisci ipsum accusamus delectus deleniti nisi? Labore laborum nesciunt quidem ex iste est quam, fugiat incidunt magnam nulla esse sequi illo molestias facilis obcaecati ipsum accusantium, consequatur in reiciendis a reprehenderit earum rerum? Doloremque deserunt id sint ducimus commodi, voluptates aliquam non provident nulla magni velit deleniti vero! Facilis, nemo iste tempora commodi illum placeat consequatur hic architecto eligendi, pariatur minima cumque cupiditate labore tempore reiciendis veniam veritatis eveniet vel suscipit! Aliquid eum ea quibusdam magnam eligendi laborum ex, iure reprehenderit? Itaque nulla magni repellat quos esse consequuntur dignissimos doloribus. Cum labore quas iusto assumenda nam provident blanditiis ullam consectetur ea deserunt hic unde rerum nihil maxime, tempore illo velit voluptatibus accusantium reiciendis numquam deleniti vero dolor. Minus ipsum impedit provident totam ab quo, voluptates magni deleniti est aspernatur reiciendis in earum, culpa commodi! Blanditiis voluptatum velit, culpa alias quam explicabo tenetur est, a, labore aut quae assumenda cumque? Id praesentium alias, quasi cupiditate voluptatum culpa, omnis dolorem recusandae consequuntur hic ipsam blanditiis? Reprehenderit mollitia aspernatur provident suscipit aperiam magnam expedita molestias nemo tenetur. Sunt quos temporibus in suscipit earum ea atque eaque fugiat cum tenetur.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores quibusdam rem in ullam odio architecto! Eum nobis, tempore in voluptates optio similique debitis quos ullam quasi aliquid molestiae alias omnis dolores minima eius quas consequatur ipsum id quaerat est, dolore sint animi? Dolores modi consequatur quidem, assumenda nostrum dolor voluptatum nobis minus accusantium accusamus voluptatibus distinctio quae adipisci illum atque. Totam soluta, sit sint molestias qui tenetur! Quas explicabo temporibus delectus nulla ipsum quod dolores quaerat corporis labore, dignissimos id excepturi repellat voluptatum porro veritatis eaque consequuntur veniam? Nulla labore repudiandae ullam adipisci voluptates accusamus, mollitia commodi ex nesciunt nisi.</p>
           </div>
           <div class="information">
             <div class="location">
@@ -225,7 +245,8 @@
         </div>
         <div class="for-more">
           <a href="browse.html" class="more-btn">
-            <i class="fas fa-chevron-right fa-2x"></i>
+            <i class="fas fa-chevron-right fa-2x right"></i>
+            <i class="fas fa-chevron-down fa-2x down"></i>
           </a>
           <h5>More Recipes</h5>
         </div>

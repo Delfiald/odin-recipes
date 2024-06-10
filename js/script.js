@@ -8,6 +8,16 @@ document.getElementById('aboutButton').addEventListener('click', function(event)
     }, 500);
 });
 
+document.getElementById('aboutButton2').addEventListener('click', function(event) {
+    event.preventDefault();
+    const aboutBox = document.getElementById('about');
+    aboutBox.classList.add('show');
+
+    setTimeout(() => {
+      aboutBox.classList.add('scale');
+    }, 500);
+});
+
 document.getElementById('backAboutButton').addEventListener('click', function(event) {
     event.preventDefault();
     document.getElementById('about').classList.remove('show');
@@ -26,4 +36,16 @@ document.addEventListener('click', function(event) {
             checkbox.checked = false;
         }
     }
+});
+
+document.getElementById('hamburgerSearchBtn').addEventListener('click', function(event) {
+  event.preventDefault();
+  const hamburgerSearch = document.getElementById('hamburgerMenu');
+  hamburgerSearch.classList.add('show');
+});
+
+document.getElementById('hamburgerSearchBack').addEventListener('click', function(event) {
+  event.preventDefault();
+  const hamburgerSearch = document.getElementById('hamburgerMenu');
+  hamburgerSearch.classList.remove('show');
 });
