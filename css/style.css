@@ -991,7 +991,7 @@ header .container.browse {
   width: 0%;
   height: 100%;
   background: rgba(255, 255, 255, 0.9);
-  /* opacity: 0.9; */
+  opacity: 0;
   justify-content: center;
   transition: .5s all ease;
 }
@@ -1022,23 +1022,49 @@ header .container.browse {
 }
 
 .hamburger-menu.show {
-  transform: translateY(-100vh);
-  height: 200vh;
+  transform: translateY(-125vh);
+  height: 225vh;
 }
 
 .hamburger-menu > div > div:nth-child(4) > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 100px;
   visibility: hidden;
-  transform: scaleX(0);
-  transition: .5s all .5s ease;
+  opacity: 0;
+  width: 0;
+  transition: .5s all ease;
+  padding: 1rem;
 }
 
 .hamburger-menu > div > div:nth-child(4) > div input {
+  font-size: 18px;
   width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem;
+}
+
+.hamburger-menu > div > div:nth-child(4) > div a {
+  font-size: 1rem;
+  margin: 1rem;
+  opacity: 0;
+  transition: .5s all ease;
 }
 
 .hamburger-menu.show > div > div:nth-child(4) > div {
   visibility: visible;
-  transform: scaleX(1);
+  opacity: 1;
+  width: 100%;
+  transition-delay: .5s;
+}
+
+.hamburger-menu.show > div > div:nth-child(4) > div a {
+  opacity: 1;
 }
 
 .hamburger-menu * {
@@ -1052,6 +1078,7 @@ header .container.browse {
 .menu-wrap .hamburger-btn:checked ~ .hamburger-menu > div {
   /* transform: scaleX(1); */
   width: 100%;
+  opacity: 1;
 }
 
 .navbar .menu-wrap {
@@ -1153,6 +1180,11 @@ header .container.browse {
   .for-more h5 {
     transform: translateY(5px);
   }
+
+  .about .about-us .l-heading {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1171,6 +1203,32 @@ header .container.browse {
 
   .details {
     padding: 1rem;
+  }
+
+  .hamburger-menu {
+    width: 50vw;
+  }
+
+  .about .about-us .l-heading {
+    font-size: 1rem;
+    margin: .5rem;
+  }
+
+  .about .about-us p {
+    font-size: 13px;
+  }
+
+  .about .information {
+    flex-direction: column;
+  }
+
+  .about .information .location {
+    font-size: 13px;
+  }
+
+  .about .information .contact {
+    flex-direction: row;
+    gap: 1rem;
   }
 }
 
@@ -1240,11 +1298,8 @@ header .container.browse {
   }
 
   .hamburger-menu {
-    width: 50vw;
-  }
-
-  .hamburger-menu > div {
-    align-items: center;
+    width: 100vw;
+    text-align: center;
   }
 
   .hamburger-menu > div > div a {
@@ -1254,5 +1309,14 @@ header .container.browse {
 
   .hamburger-menu > div > div::after {
     width: 100%;
+  }
+
+  .about > div {
+    width: 500vw;
+    height: 500vw;
+  }
+
+  .about > div > div {
+    overflow: auto;
   }
 }
